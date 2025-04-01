@@ -1,6 +1,6 @@
-import { Component, Input, input } from '@angular/core';
-import { InvestmentResult } from '../investment-results.model';
+import { Component, inject, Input, input } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { InvestmentService } from '../investment.service';
 
 @Component({
   selector: 'app-investment-results',
@@ -13,6 +13,11 @@ import { CommonModule } from '@angular/common';
 })
 export class InvestmentResultsComponent {
 
-  @Input() investmentResults!: InvestmentResult[]; // Use the InvestmentResult interface for the input data
+  investmentService = inject(InvestmentService)
+
+
+  get investmentResultData() {
+    return this.investmentService.investmentResultData;
+  }
 
 }
