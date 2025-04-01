@@ -13,6 +13,6 @@ import { CommonModule } from '@angular/common';
 })
 export class InvestmentResultsComponent {
 
-  @Input() investmentResults!: InvestmentResult[]; // Use the InvestmentResult interface for the input data
+  investmentResults = input<InvestmentResult[]>(); // Use the InvestmentResult interface for the input data
 
 }

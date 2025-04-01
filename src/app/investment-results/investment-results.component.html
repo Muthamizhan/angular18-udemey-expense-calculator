@@ -1,4 +1,4 @@
-@if(!investmentResults){
+@if(!investmentResults()?.length) {
 <p class="center">Please enter some value and press calculate!</p>
 
 } @else {
@@ -14,13 +14,13 @@
     </tr>
   </thead>
   <tbody>
-    @for(result of investmentResults; track result.year) {
+    @for(result of investmentResults(); track result.year) {
     <tr>
-      <td>{{ result.year }}</td>
-      <td>{{ result.valueEndOfYear | currency}}</td>
-      <td>{{ result.interest | currency  }}</td>
-      <td>{{ result.totalInterest | currency}}</td>
-      <td>{{ result.totalAmountInvested | currency}}</td>
+      <td>{{ result?.year }}</td>
+      <td>{{ result?.valueEndOfYear | currency}}</td>
+      <td>{{ result?.interest | currency  }}</td>
+      <td>{{ result?.totalInterest | currency}}</td>
+      <td>{{ result?.totalAmountInvested | currency}}</td>
     </tr>
     }
   </tbody>
