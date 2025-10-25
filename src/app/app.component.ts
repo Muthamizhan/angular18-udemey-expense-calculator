@@ -17,7 +17,4 @@ import { InvestmentResultsComponent } from './investment-results/investment-resu
 })
 export class AppComponent {
   investmentResultData!: InvestmentResult[];
-
-  
-  
 }
